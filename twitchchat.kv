@@ -1,0 +1,21 @@
+#:kivy 2.0.0
+
+<Container>:
+    anchor_y: "center"
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 10
+        size: [root.width / 2, root.height / 2]
+        size_hint: [None, None]
+        Label:
+            font_size: 20  
+            text: root.label_string
+        TextInput:
+            font_size: 20 
+            id: channel_name
+        Button:
+            text: "Start listener"
+            on_press: app.start_listener(channel_name.text)
+        Button:
+            text: "Quit"
+            on_press: app.stop_app()
